@@ -26,6 +26,6 @@ This project uses the following third-party components with their respective lic
 
 - EmbeddingGemma: Subject to Gemma Terms of Use (https://ai.google.dev/gemma/terms)
 - SQLite-vec: Apache License 2.0
-- Qwen3: Apache License 2.0  
+- gpt-oss: License varies by provider  
 - Sentence Transformers: Apache License 2.0
 - Ollama: MIT License

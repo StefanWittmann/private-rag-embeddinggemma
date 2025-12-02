@@ -1,0 +1,281 @@
+{
+  "query": "rag sqlite vec python quick start ollama local",
+  "number_of_results": 467000,
+  "results": [
+    {
+      "url": "https://www.zhihu.com/tardis/zm/art/675509396",
+      "title": "一文读懂：大模型RAG（检索增强生成）含高级方法",
+      "content": "Vor 2 Tagen · RAG RAG 检索增强生成（Retrieval Augmented Generation），已经成为当前最火热的LLM应用方案和打开方式了。 理解起来不难，就是通过自有垂域数据库检索相关信息，然 …",
+      "engine": "bing",
+      "template": "default.html",
+      "parsed_url": [
+        "https",
+        "www.zhihu.com",
+        "/tardis/zm/art/675509396",
+        "",
+        "",
+        ""
+      ],
+      "img_src": "",
+      "thumbnail": "",
+      "priority": "",
+      "engines": [
+        "bing"
+      ],
+      "positions": [
+        1
+      ],
+      "score": 1.0,
+      "category": "general",
+      "publishedDate": null
+    },
+    {
+      "url": "https://www.zhihu.com/tardis/bd/art/10769642350",
+      "title": "RAG-检索增强生成从入门到实战，看这一篇就够了 - 知乎",
+      "content": "4. Dez. 2024 · RAG（检索增强生成）是一种结合了信息检索技术与语言生成模型的人工智能技术，旨在提升大型语言模型处理知识密集型任务的能力。以下是关于RAG的详细介绍： RAG技 …",
+      "engine": "bing",
+      "template": "default.html",
+      "parsed_url": [
+        "https",
+        "www.zhihu.com",
+        "/tardis/bd/art/10769642350",
+        "",
+        "",
+        ""
+      ],
+      "img_src": "",
+      "thumbnail": "",
+      "priority": "",
+      "engines": [
+        "bing"
+      ],
+      "positions": [
+        2
+      ],
+      "score": 0.5,
+      "category": "general",
+      "publishedDate": null
+    },
+    {
+      "url": "https://www.zhihu.com/question/629933428",
+      "title": "RAG是什么？ - 知乎",
+      "content": "然而用户的实际需求和数据是多样的，导致通用RAG在实践中仍面临多重挑战，如检索信息缺失、复杂PDF解析困难、无法提取特定内容、格式处理不佳、统计类问答能力缺失等。 这些问题削 …",
+      "engine": "bing",
+      "template": "default.html",
+      "parsed_url": [
+        "https",
+        "www.zhihu.com",
+        "/question/629933428",
+        "",
+        "",
+        ""
+      ],
+      "img_src": "",
+      "thumbnail": "",
+      "priority": "",
+      "engines": [
+        "bing"
+      ],
+      "positions": [
+        3
+      ],
+      "score": 0.3333333333333333,
+      "category": "general",
+      "publishedDate": null
+    },
+    {
+      "url": "https://www.zhihu.com/question/11316993163",
+      "title": "deepseek下大模型就业方向（RAG、Agent等）还有前途吗？",
+      "content": "RAG和Agent方向仍处于上升期，尤其在 企业服务、垂直行业、软硬结合 的场景中机会明确。 对于从业者而言，需： 技术扎根：深入理解大模型底层机制（如注意力计算、微调策略）。 场 …",
+      "engine": "bing",
+      "template": "default.html",
+      "parsed_url": [
+        "https",
+        "www.zhihu.com",
+        "/question/11316993163",
+        "",
+        "",
+        ""
+      ],
+      "img_src": "",
+      "thumbnail": "",
+      "priority": "",
+      "engines": [
+        "bing"
+      ],
+      "positions": [
+        4
+      ],
+      "score": 0.25,
+      "category": "general",
+      "publishedDate": null
+    },
+    {
+      "url": "https://www.zhihu.com/tardis/zm/art/717438258",
+      "title": "02-大模型中的RAG流程及问题 - 知乎",
+      "content": "三、RAG流程及问题分析 RAG流程图 （1）文档导入 在该阶段要把使用到的文档都进行导入。 由于文档涉及多种格式，比如常见的有：WORD、PDF、PPT、Excel、TXT、Markdown等，格 …",
+      "engine": "bing",
+      "template": "default.html",
+      "parsed_url": [
+        "https",
+        "www.zhihu.com",
+        "/tardis/zm/art/717438258",
+        "",
+        "",
+        ""
+      ],
+      "img_src": "",
+      "thumbnail": "",
+      "priority": "",
+      "engines": [
+        "bing"
+      ],
+      "positions": [
+        5
+      ],
+      "score": 0.2,
+      "category": "general",
+      "publishedDate": null
+    },
+    {
+      "url": "https://www.zhihu.com/question/666254361?write",
+      "title": "大模型时代，目前开源的RAG检索增强框架有哪些？ - 知乎",
+      "content": "论文中的主要内容 论文的主要内容包含六个主要内容，RAG简介、RAG核心组件、多模态RAG、现有的15种RAG框架、RAG的挑战和局限、RAG未来的方向 RAG无论是从搭建成本、扩展性 …",
+      "engine": "bing",
+      "template": "default.html",
+      "parsed_url": [
+        "https",
+        "www.zhihu.com",
+        "/question/666254361",
+        "",
+        "write",
+        ""
+      ],
+      "img_src": "",
+      "thumbnail": "",
+      "priority": "",
+      "engines": [
+        "bing"
+      ],
+      "positions": [
+        6
+      ],
+      "score": 0.16666666666666666,
+      "category": "general",
+      "publishedDate": null
+    },
+    {
+      "url": "https://www.zhihu.com/question/14911130957",
+      "title": "如何高效提升大模型的RAG效果？ - 知乎",
+      "content": "现在 RAG 的解决方案有很多，可以参见 LLM-Powered-RAG-System: A collection of RAG systems powered by LLM。 今天分享一些 RAG 系统的方法论，内容来自 RAG 论文作者之一 …",
+      "engine": "bing",
+      "template": "default.html",
+      "parsed_url": [
+        "https",
+        "www.zhihu.com",
+        "/question/14911130957",
+        "",
+        "",
+        ""
+      ],
+      "img_src": "",
+      "thumbnail": "",
+      "priority": "",
+      "engines": [
+        "bing"
+      ],
+      "positions": [
+        7
+      ],
+      "score": 0.14285714285714285,
+      "category": "general",
+      "publishedDate": null
+    },
+    {
+      "url": "https://www.zhihu.com/question/1923191592593892684",
+      "title": "双非二本科生搞大模型应用开发（rag，agent）能找到工作吗，有 …",
+      "content": "不要搞RAG，要搞就搞Agentic RAG 核心思路（其实很朴素） 之前GPT-4-turbo支持128K上下文后，我突然意识到一个问题：既然模型能一次看完整本《哈利波特》，为什么还要切块？ …",
+      "engine": "bing",
+      "template": "default.html",
+      "parsed_url": [
+        "https",
+        "www.zhihu.com",
+        "/question/1923191592593892684",
+        "",
+        "",
+        ""
+      ],
+      "img_src": "",
+      "thumbnail": "",
+      "priority": "",
+      "engines": [
+        "bing"
+      ],
+      "positions": [
+        8
+      ],
+      "score": 0.125,
+      "category": "general",
+      "publishedDate": null
+    },
+    {
+      "url": "https://www.zhihu.com/question/1914466302451495286",
+      "title": "大家都在做rag，那么如何评价rag的质量呢? - 知乎",
+      "content": "在RAG的早期研究中，模型在FEVER-3（三分类）任务上实现了72.5%的准确率，这表明了RAG框架在整合证据进行判断方面的潜力，但也揭示了其中的挑战，特别是在区分“驳斥”和“信息不足” …",
+      "engine": "bing",
+      "template": "default.html",
+      "parsed_url": [
+        "https",
+        "www.zhihu.com",
+        "/question/1914466302451495286",
+        "",
+        "",
+        ""
+      ],
+      "img_src": "",
+      "thumbnail": "",
+      "priority": "",
+      "engines": [
+        "bing"
+      ],
+      "positions": [
+        9
+      ],
+      "score": 0.1111111111111111,
+      "category": "general",
+      "publishedDate": null
+    },
+    {
+      "url": "https://www.zhihu.com/tardis/zm/art/660722382",
+      "title": "GraphRAG：知识图谱+大模型",
+      "content": "24. Sept. 2025 · Graph RAG是一种基于知识图谱的 检索增强技术，通过构建图模型的知识表达，将实体和关系之间的联系用图的形式进行展示，然后利用大语言模型 LLM进行检索增强。 …",
+      "engine": "bing",
+      "template": "default.html",
+      "parsed_url": [
+        "https",
+        "www.zhihu.com",
+        "/tardis/zm/art/660722382",
+        "",
+        "",
+        ""
+      ],
+      "img_src": "",
+      "thumbnail": "",
+      "priority": "",
+      "engines": [
+        "bing"
+      ],
+      "positions": [
+        10
+      ],
+      "score": 0.1,
+      "category": "general",
+      "publishedDate": null
+    }
+  ],
+  "answers": [],
+  "corrections": [],
+  "infoboxes": [],
+  "suggestions": [],
+  "unresponsive_engines": []
+}

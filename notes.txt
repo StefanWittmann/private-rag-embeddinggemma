@@ -1,0 +1,4 @@
+curl "http://localhost:8889/search?q=rag+sqlite+vec+python+quick+start+ollama+local&engines=bing&time_range=weekformat=json" | jq > response1.txt
+curl "http://localhost:8889/search?q=weihnachtsrezepte&engines=duckduckgo&time_range=week&format=json" | jq > response2.txt
+curl "http://localhost:8889/search?q=weihnachtsrezepte&engines=startpage&time_range=week&format=json" | jq > response3.txt
+
