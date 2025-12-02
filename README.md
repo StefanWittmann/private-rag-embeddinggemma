@@ -3,16 +3,26 @@
 A 100% private, local Retrieval-Augmented Generation (RAG) stack using:
 - **EmbeddingGemma-300m** for embeddings  
 - **SQLite-vec** for vector storage
-- **Qwen3:4b** for language generation
+- **Crawl4AI** for async web scraping
+- **gpt-oss:20b** for language generation
 - **100% Private & Offline Capable**
 
 ## 🎯 What This Project Does
 
-Build a completely private, offline RAG application right on your laptop. This system combines Google's new EmbeddingGemma model for best-in-class local embeddings, SQLite-vec for a dead-simple vector database, and Ollama for a powerful, local LLM. No API keys, no costs, no data sent to the cloud.
+Build a completely private, offline RAG application right on your laptop. This system combines Google's new EmbeddingGemma model for best-in-class local embeddings, SQLite-vec for a dead-simple vector database, Crawl4AI for intelligent web scraping, and Ollama for a powerful, local LLM. No API keys, no costs, no data sent to the cloud.
+
+## 🔧 How It Works
+
+1. **Web Scraping (Crawl4AI)**: Uses Crawl4AI's async web crawler to fetch documentation pages and automatically convert them to clean markdown format
+2. **Chunking**: Splits documents into overlapping token-based chunks for optimal retrieval
+3. **Embedding (EmbeddingGemma)**: Generates dense vector representations using Google's mobile-optimized embedding model
+4. **Storage (SQLite-vec)**: Stores vectors in a local SQLite database with vector search extension
+5. **Retrieval**: Finds the most semantically similar chunks to your query via cosine similarity
+6. **Generation (gpt-oss)**: Passes retrieved context to a local LLM to generate accurate, grounded responses
 
 ## 📋 Prerequisites
 
-- Python 3.9+
+- **Python 3.13+** recommended (for Crawl4AI compatibility)
 - Modern laptop with at least 8GB RAM
 - Internet connection for initial model downloads
 
@@ -42,7 +52,16 @@ pip install uv
 uv sync
 ```
 
-### 4. Setup Ollama
+### 4. Install Playwright for Crawl4AI
+
+Crawl4AI uses Playwright for browser automation:
+
+```bash
+# Install Chromium browser for Crawl4AI
+playwright install chromium
+```
+
+### 5. Setup Ollama
 
 ```bash
 # macOS
@@ -54,11 +73,11 @@ curl -fsSL https://ollama.ai/install.sh | sh
 # Start Ollama service
 ollama serve &
 
-# Pull the Qwen3 model (2.5GB download)
-ollama pull qwen3:4b
+# Pull the gpt-oss model
+ollama pull gpt-oss:20b
 ```
 
-### 5. Hugging Face Authentication
+### 6. Hugging Face Authentication
 
 EmbeddingGemma requires Hugging Face access:
 
@@ -71,7 +90,7 @@ EmbeddingGemma requires Hugging Face access:
 uv run huggingface-cli login
 ```
 
-### 6. Run the Demo
+### 7. Run the Demo
 
 ```bash
 # Run the RAG system
@@ -117,12 +136,12 @@ uv run jupyter lab
 ```
 embeddinggemma/
 ├── .venv/                  # Virtual environment
-├── docs/                   # Scraped documentation
+├── docs/                   # Scraped documentation output (markdown files)
 ├── rag_demo.py            # Main RAG demonstration script
 ├── rag_demo.ipynb         # Complete tutorial notebook  
 ├── pyproject.toml         # Project dependencies (uv format)
 ├── requirements.txt       # Alternative pip format
-└── vectors_docs.db        # SQLite vector database
+└── vectors_docs.db        # SQLite vector database (generated)
 ```
 
 ## 🔧 Configuration
@@ -132,7 +151,7 @@ Key parameters you can modify:
 ```python
 EMBEDDING_MODEL = "google/embeddinggemma-300m"
 EMBEDDING_DIMS = 256  # 256 for 3x speed, 768 for max quality
-LLM_MODEL = "qwen3:4b"  # Try: qwen3:7b, llama3:8b, mistral:7b
+LLM_MODEL = "gpt-oss:20b"  # Try: llama3:8b, mistral:7b
 DRY_RUN = False  # Set True to test without LLM
 ```
 
@@ -145,7 +164,7 @@ uv run python rag_demo.py
 
 ### In Python/Jupyter
 ```python
-from rag_docs import *
+from rag_demo import *
 
 # Query the system
 response = semantic_search_and_query("How do I use SQLite-vec with Python?")
@@ -184,14 +203,24 @@ ps aux | grep ollama
 ollama serve &
 
 # Pull model if needed
-ollama pull qwen3:4b
+ollama pull gpt-oss:20b
+```
+
+#### Crawl4AI / Playwright Issues
+**Solution**: Ensure Playwright browsers are installed
+```bash
+# Install Chromium for Crawl4AI
+playwright install chromium
+
+# If you get permission issues, try:
+playwright install --with-deps chromium
 ```
 
 #### Out of Memory Errors
 **Solutions**:
 - Reduce `EMBEDDING_DIMS` to 256
 - Use smaller batch sizes
-- Try `qwen3:1.5b` instead of `qwen3:4b`
+- Try a smaller LLM model
 - Close other applications
 
 ### Verification Commands
@@ -205,10 +234,13 @@ which python  # Should show .venv path
 uv run python -c "import sqlite_vec, ollama, sentence_transformers; print('All imports working!')"
 
 # Check Ollama
-ollama list  # Should show qwen3:4b
+ollama list  # Should show gpt-oss:20b
 
 # Test Jupyter kernel
 jupyter kernelspec list  # Should show embeddinggemma kernel
+
+# Test Crawl4AI
+uv run python -c "from crawl4ai import AsyncWebCrawler; print('Crawl4AI ready!')"
 ```
 
 ## 📊 System Requirements
@@ -217,16 +249,16 @@ jupyter kernelspec list  # Should show embeddinggemma kernel
 - **Storage**: ~3GB for models + data
 - **Models Downloaded**:
   - EmbeddingGemma-300m: ~600MB
-  - Qwen3:4b: ~2.5GB
+  - gpt-oss:20b: model size varies
 
 ## 🛠️ Advanced Customization
 
 ### Add Custom Documentation
-Edit `DOCUMENTATION_URLS` in the script to scrape your own docs.
+Edit `DOCUMENTATION_URLS` in the script to scrape your own docs. Crawl4AI handles JavaScript-rendered pages and automatically extracts clean markdown.
 
 ### Different Models
 - **Embeddings**: Try `google/embeddinggemma-768` for higher quality
-- **LLM**: Try `qwen3:7b`, `llama3:8b`, or `mistral:7b`
+- **LLM**: Try `llama3:8b`, or `mistral:7b`
 
 ### Chunking Strategy
 Modify token-based chunking parameters:
@@ -241,15 +273,15 @@ overlap_tokens = 100   # Overlap between chunks
 ✅ **Zero Cost**: No API fees after initial setup  
 ✅ **Mobile-Optimized**: EmbeddingGemma designed for mobile deployment  
 ✅ **Fast**: SQLite-vec provides sub-millisecond vector search  
-✅ **Smart**: Qwen3 rivals much larger models with 256K context  
+✅ **Smart Scraping**: Crawl4AI handles JavaScript-rendered pages and returns clean markdown  
 ✅ **Standalone**: Complete isolation in virtual environment  
 
 ## 📜 License
 
 This project is open source. See individual model licenses:
 - EmbeddingGemma: Gemma License
-- Qwen3: Apache 2.0
 - SQLite-vec: Apache 2.0
+- Crawl4AI: Apache 2.0
 
 ## 🤝 Contributing
 
@@ -264,4 +296,5 @@ This project is open source. See individual model licenses:
 - [EmbeddingGemma](https://huggingface.co/google/embeddinggemma-300m)
 - [SQLite-vec](https://github.com/asg017/sqlite-vec)
 - [Ollama](https://ollama.ai/)
+- [Crawl4AI Documentation](https://docs.crawl4ai.com/)
 - [UV Package Manager](https://github.com/astral-sh/uv)
